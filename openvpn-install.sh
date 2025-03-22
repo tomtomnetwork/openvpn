@@ -256,14 +256,14 @@ function resolvePublicIP() {
 }
 
 function installQuestions() {
-	echo "Welcome to the OpenVPN installer!"
-	echo "The git repository is available at: https://github.com/angristan/openvpn-install"
+	echo "Bem vindo ao OpenVPN installer!"
+	echo "O repositório git está disponível em: https://github.com/tomtomnetwork/openvpn/openvpn-install"
 	echo ""
 
-	echo "I need to ask you a few questions before starting the setup."
-	echo "You can leave the default options and just press enter if you are ok with them."
+	echo "Preciso fazer algumas perguntas antes de iniciar a configuração."
+	echo "Você pode deixar as opções padrão e pressionar Enter se estiver de acordo com elas."
 	echo ""
-	echo "I need to know the IPv4 address of the network interface you want OpenVPN listening to."
+	echo "Preciso saber o endereço IPv4 da interface de rede que você deseja que o OpenVPN escute."
 	echo "Unless your server is behind NAT, it should be your public IPv4 address."
 
 	# Detect public IPv4 address and pre-fill for the user
