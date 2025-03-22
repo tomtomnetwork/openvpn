@@ -353,7 +353,7 @@ function installQuestions() {
 		;;
 	esac
 	echo ""
-	echo "What DNS resolvers do you want to use with the VPN?"
+	echo "Qual servidor de dns voce gostaria de configurar no VPN?"
 	echo "   1) Current system resolvers (from /etc/resolv.conf)"
 	echo "   2) Self-hosted DNS Resolver (Unbound)"
 	echo "   3) Cloudflare (Anycast: worldwide)"
@@ -1093,7 +1093,7 @@ verb 3" >>/etc/openvpn/client-template.txt
 
 function newClient() {
 	echo ""
-	echo "Tell me a name for the client."
+	echo "Qual é  o nome do cliente ."
 	echo "The name must consist of alphanumeric character. It may also include an underscore or a dash."
 
 	until [[ $CLIENT =~ ^[a-zA-Z0-9_-]+$ ]]; do
@@ -1101,10 +1101,10 @@ function newClient() {
 	done
 
 	echo ""
-	echo "Do you want to protect the configuration file with a password?"
+	echo "Você deseja proteger o arquivo de configuração com uma senha?"
 	echo "(e.g. encrypt the private key with a password)"
-	echo "   1) Add a passwordless client"
-	echo "   2) Use a password for the client"
+	echo "   1) Adicionar um cliente sem senha"
+	echo "   2) Use uma senha para o cliente"
 
 	until [[ $PASS =~ ^[1-2]$ ]]; do
 		read -rp "Select an option [1-2]: " -e -i 1 PASS
@@ -1184,8 +1184,8 @@ function newClient() {
 	} >>"$homeDir/$CLIENT.ovpn"
 
 	echo ""
-	echo "The configuration file has been written to $homeDir/$CLIENT.ovpn."
-	echo "Download the .ovpn file and import it in your OpenVPN client."
+	echo "O arquivo de configuração foi escrito em $homeDir/$CLIENT.ovpn."
+	echo "Baixe o arquivo .ovpn e importe-o no seu cliente OpenVPN."
 
 	exit 0
 }
